@@ -1,0 +1,404 @@
+
+:root {
+  --bg: #0b1020;
+  --panel: #11182a;
+  --panel2: #151e32;
+  --text: #edf2ff;
+  --muted: #8c9ab5;
+  --border: #263149;
+  --accent: #8b7cff;
+  --accent2: #6b5ce7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at top left, #20204a 0, transparent 40%),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  transition: background .25s, color .25s;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.12);
+}
+
+.app {
+  max-width: 1440px;
+  min-height: calc(100vh - 48px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand, .header-actions, .toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #9b8bff, #5c4bd8);
+  box-shadow: 0 8px 25px #7765ff35;
+}
+
+h1 {
+  font-size: 23px;
+  letter-spacing: -.6px;
+}
+
+h1 span {
+  color: #a99dff;
+}
+
+.brand p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.primary-btn, .icon-btn, .tool-btn {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  background: var(--panel2);
+  padding: 11px 14px;
+}
+
+.primary-btn {
+  background: var(--accent);
+  border-color: transparent;
+  color: white;
+  font-weight: 600;
+}
+
+.icon-btn {
+  font-size: 18px;
+  padding: 9px 11px;
+}
+
+.workspace {
+  flex: 1;
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px #0002;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+  border-right: 1px solid var(--border);
+  min-width: 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--bg);
+  color: var(--muted);
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 7px 12px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.note-item {
+  padding: 13px;
+  text-align: left;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+.note-item.active {
+  background: #8b7cff19;
+  border-color: #8b7cff55;
+}
+
+.note-item strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.note-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.empty-notes {
+  color: var(--muted);
+  padding: 20px 8px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #49d6a1;
+}
+
+.editor {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-toolbar {
+  min-height: 65px;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.save-status {
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-btn {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+.tool-btn.danger {
+  color: #ff8e9b;
+}
+
+.writing-area {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 50px clamp(22px, 6vw, 85px);
+  display: flex;
+  flex-direction: column;
+}
+
+.note-title {
+  width: 100%;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 750;
+  letter-spacing: -1.4px;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  outline: 0;
+}
+
+.note-title::placeholder {
+  color: #56627d;
+}
+
+.note-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+#noteContent {
+  width: 100%;
+  min-height: 380px;
+  flex: 1;
+  margin-top: 35px;
+  resize: vertical;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 2;
+}
+
+#noteContent::placeholder {
+  color: #687590;
+}
+
+.editor-footer {
+  padding: 17px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+body.light {
+  --bg: #f2f4fb;
+  --panel: #ffffff;
+  --panel2: #f1f2fa;
+  --text: #20253a;
+  --muted: #777f97;
+  --border: #e2e5f0;
+}
+
+body.light {
+  background: #f2f4fb;
+}
+
+body.light .search-box {
+  background: #f8f9fd;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 12px;
+  }
+
+  .app {
+    min-height: calc(100vh - 24px);
+    gap: 18px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+    min-height: 750px;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    max-height: 280px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .writing-area {
+    padding: 30px 20px;
+  }
+
+  .editor-toolbar {
+    padding: 12px;
+  }
+
+  .tool-btn {
+    padding: 9px;
+  }
+
+  .editor-footer {
+    padding: 14px;
+    flex-wrap: wrap;
+  }
+
+  .brand p {
+    display: none;
+  }
+
+  h1 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand, .header-actions {
+    gap: 7px;
+  }
+
+  .primary-btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .icon-btn {
+    padding: 8px;
+  }
+}

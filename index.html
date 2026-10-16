@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notepad Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <h1>Notepad <span>Pro</span></h1>
+          <p>Your thoughts, beautifully organized.</p>
+          <p>Rupesh Chaurasiya</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeBtn" class="icon-btn" title="Toggle theme">☀️</button>
+        <button id="newBtn" class="primary-btn">＋ New Note</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" placeholder="Search notes..." />
+        </div>
+
+        <div class="section-heading">
+          <span>YOUR NOTES</span>
+          <span id="noteCount">0</span>
+        </div>
+
+        <div id="notesList" class="notes-list"></div>
+
+        <div class="sidebar-footer">
+          <span class="status-dot"></span>
+          Notes saved on this device
+        </div>
+      </aside>
+
+      <section class="editor">
+        <div class="editor-toolbar">
+          <div class="save-status" id="saveStatus">
+            <span class="status-dot"></span> Ready
+          </div>
+          <div class="toolbar-actions">
+            <button id="downloadBtn" class="tool-btn">↓ Download</button>
+            <button id="deleteBtn" class="tool-btn danger">Delete</button>
+          </div>
+        </div>
+
+        <div class="writing-area">
+          <input id="noteTitle" class="note-title"
+                 placeholder="Untitled Note" maxlength="150" />
+          <div class="note-meta">
+            <span id="dateLabel">New note</span>
+            <span>•</span>
+            <span id="wordCount">0 words</span>
+            <span>•</span>
+            <span id="charCount">0 characters</span>
+          </div>
+          <textarea id="noteContent"
+            placeholder="Start writing your thoughts here...
+
+Capture an idea, write a plan, or simply let your thoughts flow."></textarea>
+        </div>
+
+        <footer class="editor-footer">
+          <span>created by Rupesh chaurasiya</span>
+          <span>HTML · CSS · JavaScript</span>
+        </footer>
+      </section>
+    </main>']
+    '
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
